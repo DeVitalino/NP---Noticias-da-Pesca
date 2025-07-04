@@ -1,11 +1,10 @@
-/* Reset básico */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Sticky Footer Layout */
 html, body {
   height: 100%;
 }
@@ -17,9 +16,9 @@ body {
   font-family: 'Georgia', serif;
   background-color: #fff;
   color: #333;
-  margin: 0;
 }
 
+/* Cabeçalho */
 .cabecalho {
   background-color: #004a99;
   display: flex;
@@ -36,20 +35,19 @@ body {
 }
 
 .logo-container {
-  flex-shrink: 0; /* não deixa o logo encolher */
   height: 50px;
-  width: 180px;
+  width: 150px;
   display: flex;
   align-items: center;
-  width: 150px; /* limite fixo para o container do logo */
 }
 
 .logo {
-  height: 50px;      
+  height: 50px;
   width: auto;
   max-width: 100%;
   display: block;
 }
+
 .menu-links {
   display: flex;
   gap: 30px;
@@ -77,17 +75,17 @@ body {
 }
 
 .barra-pesquisa input {
-  padding: 6px 12px;            /* padding equilibrado para conforto */
-  font-size: 0.95rem;           /* um pouco menor, mas legível */
-  border-radius: 20px 0 0 20px; /* cantos arredondados */
-  border: 1.5px solid #ccc;     /* borda clara */
+  padding: 6px 12px;
+  font-size: 0.95rem;
+  border-radius: 20px 0 0 20px;
+  border: 1.5px solid #ccc;
   outline: none;
   transition: border-color 0.3s ease;
-  width: 180px;                 /* largura menor que o original */
+  width: 180px;
 }
 
 .barra-pesquisa input:focus {
-  border-color: #004a99;        /* borda azul quando ativo */
+  border-color: #004a99;
   box-shadow: 0 0 5px rgba(0, 74, 153, 0.5);
 }
 
@@ -108,43 +106,94 @@ body {
   background-color: #003a7a;
 }
 
-
-
-/* Main e conteúdo */
+/* Main */
 main {
-  flex: 1 0 auto;
-  margin-top: 80px; /* ajuste para o cabeçalho fixo mais baixo */
-  padding: 20px;
-}
-
-/* Rodapé */
-#rodape {
-  background-color: #004a99;
-  color: white;
-  padding: 6px 40px; /* menos espaço vertical */
-  flex-shrink: 0;
-  font-size: 0.85rem; /* tamanho geral menor */
-}
-
-/* Container do rodapé */
-.footer-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  flex: 1;
+  padding: 60px 20px 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Logo no rodapé */
-.footer-logo {
-  width: 90px; /* um pouco menor */
-  height: auto;
-  display: block;
+/* Grid dos cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 0 20px 40px;
 }
 
-/* Lista de links do rodapé */
+/* Card padrão */
+.card-noticia {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card-noticia:hover {
+  transform: scale(1.01);
+}
+
+.conteudo-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  padding: 20px;
+  transition: opacity 0.4s ease;
+}
+
+.card-noticia:hover .conteudo-hover {
+  opacity: 1;
+}
+
+.conteudo-hover h2 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.conteudo-hover p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Card destaque (só muda altura) */
+.card-destaque {
+  height: 300px;
+}
+
+/* Rodapé */
+#rodape {
+  background: #004a99;
+  color: white;
+  padding: 10px 40px;
+  font-size: 0.85rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  width: 90px;
+  height: auto;
+}
+
 .footer-links {
   list-style: none;
   display: flex;
@@ -157,7 +206,7 @@ main {
   color: #fff;
   text-decoration: none;
   font-weight: 400;
-  font-size: 0.75rem; /* menor ainda */
+  font-size: 0.75rem;
   display: flex;
   align-items: center;
   gap: 6px;
