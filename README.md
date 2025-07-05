@@ -10,7 +10,6 @@
   <a href="#-sobre-o-projeto">Sobre</a> •
   <a href="#-funcionalidades">Funcionalidades</a> •
   <a href="#-tecnologias">Tecnologias</a> •
-  <a href="#-licença">Licença</a>
 </p>
 
 <br/>
@@ -43,7 +42,7 @@ O projeto busca conectar e informar pescadores, comunidades costeiras, pesquisad
 - 📰 Interface limpa e acessível
 
 
-## 🛠 Tecnologias Utilizadas
+## 🛠 Tecnologias
 
 | Tecnologias       |
 |------------------|
