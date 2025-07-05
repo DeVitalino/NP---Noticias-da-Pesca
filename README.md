@@ -10,6 +10,7 @@
   <a href="#-sobre-o-projeto">Sobre</a> •
   <a href="#-funcionalidades">Funcionalidades</a> •
   <a href="#-tecnologias">Tecnologias</a> •
+  <a href="#-desenvolvedor">Desenvolvedor</a> •
 </p>
 
 <br/>
