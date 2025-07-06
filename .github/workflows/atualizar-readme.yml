@@ -20,7 +20,8 @@ jobs:
 
       - name: Substituir variáveis no template
         run: |
-          python3 atualizar.py
+          python3 .github/atualizar.py
+
 
       - name: Commit e push
         run: |
