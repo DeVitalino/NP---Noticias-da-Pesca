@@ -23,14 +23,14 @@ body {
   background-color: #004a99;
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  justify-content: space-between;  /* corrigido para alinhamento correto */
+  padding: 0 20px;                  /* removido padding vertical para melhor alinhamento */
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1100;
   height: 60px;
-  justify-content: space-between;
   gap: 20px;
 }
 
@@ -50,10 +50,11 @@ body {
 
 .menu-links {
   display: flex;
-  gap: 30px;
+  gap: 20px;            /* diminuiu de 30 para 20 para melhor espaçamento */
   align-items: center;
-  flex-grow: 1;
-  justify-content: center;
+  flex-grow: 0;         /* corrigido para não crescer demais */
+  flex-shrink: 1;
+  justify-content: flex-start;
 }
 
 .menu-links a {
@@ -74,42 +75,48 @@ body {
   transform: scale(1.1);
 }
 
-.barra-pesquisa input {
-  padding: 6px 12px;
-  font-size: 0.95rem;
-  border-radius: 20px 0 0 20px;
-  border: 1.5px solid #ccc;
-  outline: none;
-  transition: border-color 0.3s ease;
-  width: 180px;
+.barra-minimalista {
+  display: flex;
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  padding: 4px 10px;
+  background-color: transparent;
+  max-width: 220px;     /* limitado para evitar crescer demais */
+  width: 100%;
+  flex-shrink: 0;
 }
 
-.barra-pesquisa input:focus {
-  border-color: #004a99;
-  box-shadow: 0 0 5px rgba(0, 74, 153, 0.5);
-}
-
-.barra-pesquisa button {
-  padding: 6px 18px;
-  font-size: 0.95rem;
-  border-radius: 0 20px 20px 0;
+.barra-minimalista input {
+  background: transparent;
   border: none;
-  background-color: #004a99;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 74, 153, 0.3);
+  outline: none;
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 5px 8px;
+  width: 100%;         /* para ocupar todo o espaço disponível na barra */
+  text-align: center;
 }
 
-.barra-pesquisa button:hover {
-  background-color: #003a7a;
+.barra-minimalista button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  padding: 4px;
+}
+
+#campo-pesquisa::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  opacity: var(--placeholder-opacity, 1);
+  transition: opacity 0.5s ease-in-out;
 }
 
 /* Main */
 main {
   flex: 1;
-  padding: 60px 20px 40px;
+  padding: 70px 20px 40px; /* padding-top ajustado para header fixo */
   max-width: 1200px;
   margin: 0 auto;
 }
