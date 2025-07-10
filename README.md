@@ -65,7 +65,7 @@ Fique à vontade para entrar em contato comigo:
 
 <p align="center">
 <a href="https://github.com/DeVitalino">
-<img src="https://img.shields.io/badge/feito%20por-Mateus%20Vitalino-9cf?style=for-the-badge" alt="Desenvolvido por Mateus Vitalino"/>
+<img src="https://img.shields.io/badge/Desenvolvido%20por-Mateus%20Vitalino-9cf?style=for-the-badge" alt="Desenvolvido por Mateus Vitalino"/>
 </a>
 </p>
 
