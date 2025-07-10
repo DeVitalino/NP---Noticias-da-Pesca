@@ -1,6 +1,6 @@
 
 const inputPesquisa = document.getElementById('campo-pesquisa');
-const palavras = ["Pesca", "Cultura", "Informação", "Aquicultura" ];
+const palavras = ["Pesca", "Cultura", "Informação", "Aquicultura", "PesqBrasil", "Defeso", "Pescador", "Clima" ];
 let indice = 0;
 
 function trocarPlaceholder() {
