@@ -23,8 +23,8 @@ body {
   background-color: #004a99;
   display: flex;
   align-items: center;
-  justify-content: space-between;  /* corrigido para alinhamento correto */
-  padding: 0 20px;                  /* removido padding vertical para melhor alinhamento */
+  justify-content: space-between;  
+  padding: 0 20px;                  
   position: fixed;
   width: 100%;
   top: 0;
@@ -50,9 +50,9 @@ body {
 
 .menu-links {
   display: flex;
-  gap: 20px;            /* diminuiu de 30 para 20 para melhor espaçamento */
+  gap: 20px;            
   align-items: center;
-  flex-grow: 0;         /* corrigido para não crescer demais */
+  flex-grow: 0;         
   flex-shrink: 1;
   justify-content: flex-start;
 }
@@ -75,6 +75,137 @@ body {
   transform: scale(1.1);
 }
 
+.menu-servicos {
+  position: relative;
+  display: inline-block;
+}
+
+.servicos-toggle {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  color: #fff; /* ajuste conforme a cor do seu menu */
+  padding: 10px;
+}
+
+.servicos-toggle i {
+  margin-left: 5px;
+}
+
+.menu-servicos {
+  position: relative;
+  display: inline-block;
+}
+
+.servicos-toggle {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.servicos-toggle i.fa-caret-down {
+  margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+.menu-servicos {
+  position: relative;
+  display: inline-block;
+}
+
+.servicos-toggle {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.servicos-toggle i.fa-caret-down {
+  margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+.submenu-servicos {
+  max-height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 74, 153, 0.9);
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  pointer-events: none;
+
+  display: flex;
+  gap: 15px;
+  padding: 12px 25px;
+  justify-content: center;
+  white-space: nowrap; /* evita quebra de linha dos links */
+  min-width: 300px; /* largura mínima confortável */
+}
+
+.menu-servicos:hover .submenu-servicos {
+  max-height: 120px; /* espaço suficiente para exibir os links */
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Itens do submenu horizontal */
+.submenu-servicos li {
+  list-style: none;
+}
+
+.submenu-servicos li a {
+  color: #fff;
+  padding: 10px 20px;
+  font-family: 'Georgia', serif;
+  font-size: 1.1rem;
+  font-weight: normal;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  display: block;
+  white-space: nowrap; /* impede quebra de linha dentro do link */
+}
+
+.submenu-servicos li a:hover {
+   background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Ajustar hover do botão para combinar com links */
+.menu-servicos:hover > .servicos-toggle {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Rotacionar o caret quando aberto */
+.menu-servicos:hover > .servicos-toggle i.fa-caret-down {
+  transform: rotate(180deg);
+}
+
 .barra-minimalista {
   display: flex;
   align-items: center;
@@ -82,7 +213,7 @@ body {
   border-radius: 30px;
   padding: 4px 10px;
   background-color: transparent;
-  max-width: 220px;     /* limitado para evitar crescer demais */
+  max-width: 220px;     
   width: 100%;
   flex-shrink: 0;
 }
@@ -94,7 +225,7 @@ body {
   color: #fff;
   font-size: 0.95rem;
   padding: 5px 8px;
-  width: 100%;         /* para ocupar todo o espaço disponível na barra */
+  width: 100%;         
   text-align: center;
 }
 
@@ -116,10 +247,12 @@ body {
 /* Main */
 main {
   flex: 1;
-  padding: 70px 20px 40px; /* padding-top ajustado para header fixo */
+  padding: 70px 20px 40px; 
   max-width: 1200px;
   margin: 0 auto;
 }
+
+
 
 /* Grid dos cards */
 .cards-container {
@@ -173,7 +306,7 @@ main {
   opacity: 0.9;
 }
 
-/* Card destaque (só muda altura) */
+/* Card destaque*/
 .card-destaque {
   height: 300px;
 }
