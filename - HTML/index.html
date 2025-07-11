@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="../- CSS/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
-
 <body>
   <header class="cabecalho">
     <div class="logo-container">
@@ -19,20 +18,16 @@
       <a href="noticia.html"><i class="fa-solid fa-newspaper"></i> Notícia</a>
       <a href="noticia2.html"><i class="fa-solid fa-newspaper"></i> Notícia</a>
       <a href="noticia3.html"><i class="fa-solid fa-newspaper"></i> Notícia</a>
-      <a href="instagram.html"><i class="fa-brands fa-instagram"></i> Instagram</a>
-      
+      <a href="https://www.instagram.com/noticiasdapesca/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
       <div class="menu-servicos">
         <button class="servicos-toggle">
           <i class="fa-solid fa-link"></i> Serviços <i class="fa-solid fa-caret-down"></i>
         </button>
-
         <ul class="submenu-servicos">
           <li><a href="https://meu.inss.gov.br/#/login" target="_blank">INSS</a></li>
           <li><a href="https://pesqbrasil-pescadorprofissional.agro.gov.br/" target="_blank">PESQBRASIL</a></li>
-
         </ul>
       </div>
-
     </nav>
 
     <div class="barra-minimalista">
@@ -44,29 +39,36 @@
   </header>
 
   <main>
-    <section class="cards-container">
-      <!-- Card destaque -->
-      <div class="card-noticia card-destaque" style="background-image: url('../- IMAGE/R.jpg');">
-        <div class="conteudo-hover">
-          <h2>Notícia em Destaque</h2>
-          <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet..."</p>
+    <!-- Carrossel Principal -->
+    <section class="carrossel-principal">
+      <div class="carrossel-viewport">
+        <div class="carrossel-container">
+          <div class="card-carrossel">
+            <img src="../- IMAGE/R.jpg" alt="Notícia 1" />
+            <div class="conteudo-card">
+              <h2>Título 1</h2>
+              <p>Resumo da notícia 1...</p>
+            </div>
+          </div>
+          <div class="card-carrossel">
+            <img src="../- IMAGE/R.jpg" alt="Notícia 2" />
+            <div class="conteudo-card">
+              <h2>Título 2</h2>
+              <p>Resumo da notícia 2...</p>
+            </div>
+          </div>
+          <div class="card-carrossel">
+            <img src="../- IMAGE/R.jpg" alt="Notícia 3" />
+            <div class="conteudo-card">
+              <h2>Título 3</h2>
+              <p>Resumo da notícia 3...</p>
+            </div>
+          </div>
+          <!-- Clones serão adicionados via JS -->
         </div>
       </div>
-
-      <!-- Outros cards -->
-      <div class="card-noticia" style="background-image: url('../- IMAGE/R.jpg')">
-        <div class="conteudo-hover">
-          <h2>Notícia 1</h2>
-          <p>"Resumo breve da notícia..."</p>
-        </div>
-      </div>
-
-      <div class="card-noticia" style="background-image: url('../- IMAGE/R.jpg')">
-        <div class="conteudo-hover">
-          <h2>Notícia 2</h2>
-          <p>"Outro resumo aqui..."</p>
-        </div>
-      </div>
+      <button class="seta esquerda">&#10094;</button>
+      <button class="seta direita">&#10095;</button>
     </section>
   </main>
 
@@ -81,10 +83,11 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="../- JS/Barralateral.js"></script>
   <script src="../- JS/Dataatualizacao.js"></script>
   <script src="../- JS/Pesquisa.js"></script>
   <script src="../- JS/Barradepesquisaanimada.js"></script>
-  
+  <script src="../- JS/cardcarrosel.js"></script>
 </body>
 </html>

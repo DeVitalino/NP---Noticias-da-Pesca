@@ -1,26 +1,25 @@
-
 const inputPesquisa = document.getElementById('campo-pesquisa');
-const palavras = ["Pesca", "Cultura", "Informação", "Aquicultura", "PesqBrasil", "Defeso", "Pescador", "Clima" ];
+const placeholderAnimado = document.getElementById('placeholder-animado');
+const palavras = ["Pesca", "Cultura", "Informação", "Aquicultura", "PesqBrasil", "Defeso", "Pescador", "Clima"];
 let indice = 0;
 
 function trocarPlaceholder() {
-  // efeito sumir (fade out)
-  inputPesquisa.style.setProperty('--placeholder-opacity', '0');
-
+  placeholderAnimado.style.opacity = '0';
   setTimeout(() => {
-    // troca o texto do placeholder
-    inputPesquisa.placeholder = palavras[indice];
-    // efeito aparecer (fade in)
-    inputPesquisa.style.setProperty('--placeholder-opacity', '1');
-
-    // próximo índice, volta ao início ao chegar no fim
     indice = (indice + 1) % palavras.length;
-  }, 500); // 500ms = tempo do fade out
+    placeholderAnimado.textContent = palavras[indice];
+    placeholderAnimado.style.opacity = '1';
+  }, 500);
 }
 
-// Inicializa
-inputPesquisa.placeholder = palavras[0];
-inputPesquisa.style.setProperty('--placeholder-opacity', '1');
+inputPesquisa.addEventListener('focus', () => {
+  placeholderAnimado.style.opacity = '0';
+});
 
-// Troca a cada 3 segundos (3000ms)
+inputPesquisa.addEventListener('blur', () => {
+  if (!inputPesquisa.value) {
+    placeholderAnimado.style.opacity = '1';
+  }
+});
+
 setInterval(trocarPlaceholder, 3000);

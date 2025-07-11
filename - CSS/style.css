@@ -1,4 +1,4 @@
-/* Reset */
+/* ==================== RESET ==================== */
 * {
   margin: 0;
   padding: 0;
@@ -7,24 +7,24 @@
 
 html, body {
   height: 100%;
+  font-family: 'Georgia', serif;
+  background-color: #fff;
+  color: #333;
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: 'Georgia', serif;
-  background-color: #fff;
-  color: #333;
 }
 
-/* Cabeçalho */
+/* ==================== CABEÇALHO ==================== */
 .cabecalho {
   background-color: #004a99;
   display: flex;
   align-items: center;
-  justify-content: space-between;  
-  padding: 0 20px;                  
+  justify-content: space-between;
+  padding: 0 20px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -50,11 +50,8 @@ body {
 
 .menu-links {
   display: flex;
-  gap: 20px;            
+  gap: 20px;
   align-items: center;
-  flex-grow: 0;         
-  flex-shrink: 1;
-  justify-content: flex-start;
 }
 
 .menu-links a {
@@ -85,24 +82,6 @@ body {
   border: none;
   font: inherit;
   cursor: pointer;
-  color: #fff; /* ajuste conforme a cor do seu menu */
-  padding: 10px;
-}
-
-.servicos-toggle i {
-  margin-left: 5px;
-}
-
-.menu-servicos {
-  position: relative;
-  display: inline-block;
-}
-
-.servicos-toggle {
-  background: none;
-  border: none;
-  font: inherit;
-  cursor: pointer;
   color: #fff;
   padding: 6px 12px;
   font-size: 1.2rem;
@@ -119,30 +98,13 @@ body {
   transition: transform 0.3s ease;
 }
 
-.menu-servicos {
-  position: relative;
-  display: inline-block;
+.menu-servicos:hover > .servicos-toggle {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
 }
 
-.servicos-toggle {
-  background: none;
-  border: none;
-  font: inherit;
-  cursor: pointer;
-  color: #fff;
-  padding: 6px 12px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.servicos-toggle i.fa-caret-down {
-  margin-left: 4px;
-  transition: transform 0.3s ease;
+.menu-servicos:hover > .servicos-toggle i.fa-caret-down {
+  transform: rotate(180deg);
 }
 
 .submenu-servicos {
@@ -154,27 +116,25 @@ body {
   right: 0;
   background-color: rgba(0, 74, 153, 0.9);
   border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   transition: max-height 0.4s ease, opacity 0.4s ease;
   opacity: 0;
   pointer-events: none;
-
   display: flex;
   gap: 15px;
   padding: 12px 25px;
   justify-content: center;
-  white-space: nowrap; /* evita quebra de linha dos links */
-  min-width: 300px; /* largura mínima confortável */
+  white-space: nowrap;
+  min-width: 300px;
 }
 
 .menu-servicos:hover .submenu-servicos {
-  max-height: 120px; /* espaço suficiente para exibir os links */
+  max-height: 120px;
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Itens do submenu horizontal */
 .submenu-servicos li {
   list-style: none;
 }
@@ -182,38 +142,26 @@ body {
 .submenu-servicos li a {
   color: #fff;
   padding: 10px 20px;
-  font-family: 'Georgia', serif;
   font-size: 1.1rem;
-  font-weight: normal;
   border-radius: 4px;
   transition: background-color 0.3s ease;
   display: block;
-  white-space: nowrap; /* impede quebra de linha dentro do link */
+  white-space: nowrap;
 }
 
 .submenu-servicos li a:hover {
-   background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Ajustar hover do botão para combinar com links */
-.menu-servicos:hover > .servicos-toggle {
   background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
-}
-
-/* Rotacionar o caret quando aberto */
-.menu-servicos:hover > .servicos-toggle i.fa-caret-down {
-  transform: rotate(180deg);
 }
 
 .barra-minimalista {
+  position: relative;
   display: flex;
   align-items: center;
   border: 1px solid #fff;
   border-radius: 30px;
   padding: 4px 10px;
   background-color: transparent;
-  max-width: 220px;     
+  max-width: 220px;
   width: 100%;
   flex-shrink: 0;
 }
@@ -225,8 +173,9 @@ body {
   color: #fff;
   font-size: 0.95rem;
   padding: 5px 8px;
-  width: 100%;         
-  text-align: center;
+  width: 100%;
+  z-index: 2;
+  position: relative;
 }
 
 .barra-minimalista button {
@@ -236,82 +185,128 @@ body {
   color: #fff;
   font-size: 1rem;
   padding: 4px;
+  z-index: 2;
+  position: relative;
 }
 
-#campo-pesquisa::placeholder {
+.placeholder-animado {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   color: rgba(255, 255, 255, 0.7);
-  opacity: var(--placeholder-opacity, 1);
+  pointer-events: none;
+  font-size: 0.95rem;
+  user-select: none;
   transition: opacity 0.5s ease-in-out;
+  z-index: 1;
 }
 
-/* Main */
+/* ==================== MAIN ==================== */
 main {
   flex: 1;
-  padding: 70px 20px 40px; 
+  padding: 80px 20px 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-
-
-/* Grid dos cards */
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  padding: 0 20px 40px;
+/* ==================== CARROSSEL PRINCIPAL ==================== */
+.carrossel-principal {
+  position: relative;
+  overflow: hidden;
+  margin: 40px auto;
+  max-width: 100%;
 }
 
-/* Card padrão */
-.card-noticia {
+.carrossel-viewport {
+  overflow: hidden;
   position: relative;
-  background-size: cover;
-  background-position: center;
-  height: 250px;
+  width: 100%;
+}
+
+.carrossel-container {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  will-change: transform;
+}
+
+.card-carrossel {
+  flex: 0 0 80%;
+  margin: 0 10px;
   border-radius: 12px;
   overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
 }
 
-.card-noticia:hover {
-  transform: scale(1.01);
+.card-carrossel img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
 }
 
-.conteudo-hover {
+.conteudo-card {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  opacity: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   padding: 20px;
-  transition: opacity 0.4s ease;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: white;
 }
 
-.card-noticia:hover .conteudo-hover {
-  opacity: 1;
-}
-
-.conteudo-hover h2 {
-  font-size: 1.4rem;
+.conteudo-card h2 {
+  font-size: 1.8rem;
   margin-bottom: 5px;
-  font-weight: 600;
+  font-weight: bold;
 }
 
-.conteudo-hover p {
+.conteudo-card p {
   font-size: 1rem;
   opacity: 0.9;
 }
 
-/* Card destaque*/
-.card-destaque {
-  height: 300px;
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #004a99; /* azul sólido */
+  border: none;
+  color: white; /* ícone branco dentro */
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: none;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px; /* cantos levemente arredondados */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Rodapé */
+.seta:hover {
+  background-color: #0066cc; /* azul mais claro no hover */
+}
+
+.seta.esquerda {
+  left: 12px;
+}
+
+.seta.direita {
+  right: 12px;
+}
+
+.carrossel-principal:hover .seta {
+  display: flex;
+}
+
+/* ==================== RODAPÉ ==================== */
 #rodape {
   background: #004a99;
   color: white;
